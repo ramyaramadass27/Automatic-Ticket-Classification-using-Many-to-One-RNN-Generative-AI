@@ -1,0 +1,10 @@
+streamlit
+tensorflow
+keras
+numpy
+pandas
+scikit-learn
+requests
+google-generativeai
+gdown
+protobuf==3.20
