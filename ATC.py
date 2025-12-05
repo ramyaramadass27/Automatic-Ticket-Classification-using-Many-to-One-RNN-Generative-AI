@@ -10,11 +10,17 @@ import os
 import gdown
 import streamlit as st
 from keras.models import load_model
+import gdown
+import os
+import streamlit as st
 
-# Google Drive file ID (replace with yours)
+# Google Drive file ID
 GDRIVE_FILE_ID = "1ngkRVoqtcMKU76L5cwVq5uB3fagnkVaG"
 
-MODEL_FILE = "bet_lstm.h5"
+# Local file name to save
+MODEL_FILE = "bet_lstm.h5"  # fix typo: "bet_lstm.h5" → "best_lstm.h5"
+
+# URL for gdown
 GDRIVE_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
 
 def download_model(url, output_path):
@@ -31,6 +37,9 @@ def load_lstm_model():
 
 # Load model
 model = load_lstm_model()
+from tensorflow.keras.models import load_model
+
+model = load_model("bet_lstm.h5")
 
 # ----------------------- Streamlit Config -----------------------
 st.set_page_config(page_title="AI Support Chatbot", page_icon="🤖")
