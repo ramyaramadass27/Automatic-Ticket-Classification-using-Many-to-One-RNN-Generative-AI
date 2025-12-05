@@ -1,10 +1,11 @@
 streamlit
-tensorflow
-keras
+tensorflow==2.13.0
 numpy
 pandas
 scikit-learn
 requests
 google-generativeai
 gdown
-protobuf==3.20
+datasets
+nltk
+matplotlib
