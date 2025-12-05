@@ -112,7 +112,7 @@ st.markdown("""
 
 
 # ----------------------- Model & Assets -----------------------
-model = load_model(r"C:\Users\welcome\OneDrive\Desktop\streamlit\env\Scripts\best_lstm.h5", compile=False)
+model = load_model(r"C:\Users\welcome\OneDrive\Desktop\streamlit\env\Scripts\bet_bilstm_v3.h5", compile=False)
 
 with open(r"C:\Users\welcome\OneDrive\Desktop\streamlit\env\Scripts\tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
