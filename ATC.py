@@ -5,6 +5,33 @@ from keras.preprocessing.sequence import pad_sequences
 import pickle, os, re, requests, numpy as np
 from time import sleep
 
+
+import os
+import gdown
+import streamlit as st
+from keras.models import load_model
+
+# Google Drive file ID (replace with yours)
+GDRIVE_FILE_ID = "1ngkRVoqtcMKU76L5cwVq5uB3fagnkVaG"
+
+MODEL_FILE = "bet_lstm.h5"
+GDRIVE_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
+
+def download_model(url, output_path):
+    if not os.path.exists(output_path):
+        with st.spinner("Downloading model (please wait)..."):
+            gdown.download(url, output_path, quiet=False)
+    return output_path
+
+@st.cache_resource
+def load_lstm_model():
+    model_path = download_model(GDRIVE_URL, MODEL_FILE)
+    model = load_model(model_path, compile=False)
+    return model
+
+# Load model
+model = load_lstm_model()
+
 # ----------------------- Streamlit Config -----------------------
 st.set_page_config(page_title="AI Support Chatbot", page_icon="🤖")
 
