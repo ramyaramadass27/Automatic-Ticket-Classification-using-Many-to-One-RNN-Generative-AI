@@ -154,7 +154,7 @@ import pickle
 # ----------------------- Model & Assets -----------------------
 
 # Load model from repo (not local path)
-model = load_model("bet_lstm.h5", compile=False)
+model = load_model("bilstm.h5", compile=False)
 
 # Load tokenizer
 with open("tokenizer.pkl", "rb") as f:
