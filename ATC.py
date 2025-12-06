@@ -148,12 +148,22 @@ st.markdown("""
 
 
 # ----------------------- Model & Assets -----------------------
-model = load_model(r"C:\Users\welcome\OneDrive\Desktop\streamlit\env\Scripts\bet_bilstm_v3.h5", compile=False)
+from keras.models import load_model
+import pickle
 
-with open(r"C:\Users\welcome\OneDrive\Desktop\streamlit\env\Scripts\tokenizer.pkl", "rb") as f:
+# ----------------------- Model & Assets -----------------------
+
+# Load model from repo (not local path)
+model = load_model("bet_bilstm_v3.h5", compile=False)
+
+# Load tokenizer
+with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
-with open(r"C:\Users\welcome\OneDrive\Desktop\streamlit\env\Scripts\label_encoder.pkl", "rb") as f:
+
+# Load label encoder
+with open("label_encoder.pkl", "rb") as f:
     le = pickle.load(f)
+
 
 max_len = 300  # match your training setup
 
