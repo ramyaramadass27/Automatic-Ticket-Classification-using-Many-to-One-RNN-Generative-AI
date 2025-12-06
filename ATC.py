@@ -15,10 +15,10 @@ import os
 import streamlit as st
 
 # Google Drive file ID
-GDRIVE_FILE_ID = "1ngkRVoqtcMKU76L5cwVq5uB3fagnkVaG"
+GDRIVE_FILE_ID = "1gd9Tp-0J6_COyWppl-tiwlStYxTswQ4u"
 
 # Local file name to save
-MODEL_FILE = "bet_lstm.h5"  # fix typo: "bet_lstm.h5" → "best_lstm.h5"
+MODEL_FILE = "bilstm.h5"  # fix typo: "bet_lstm.h5" → "best_lstm.h5"
 
 # URL for gdown
 GDRIVE_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
